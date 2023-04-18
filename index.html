@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="nl">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="author" content="Lars Caspers">
+        <meta name="description" content="huiswerk les 25">
+        <meta name="keywords" content="huiswerk, nha, les 25">
+        <title>Home</title>
+        <link rel="stylesheet" 
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" 
+        integrity="sha256-wLz3iY/cO4e6vKZ4zRmo4+9XDpMcgKOvv/zEU3OMlRo=" 
+        crossorigin="anonymous">
+        <script src="http://code.jquery.com/jquery-3.1.0.min.js">
+        </script>
+        <script>
+            $(document).ready(function() {
+                $(".verstoppen").hide();
+                $("#toon").click(function() {
+                    $("#like").hide();
+                    $(".verstoppen").fadeToggle();
+                });
+            });
+            
+            function like() {
+                var naam = $("#naamInvoer").val();
+                window.alert("Dankjewel " + naam);
+                document.getElementById("naamInvoer").value = "";
+                $("#like").hide();
+            };
+            
+            function invoer() {
+                var naam = $("#naamInvoer").val();
+                var lengte = naam.length;
+                if (lengte > 0) {
+                    $("#like").show();
+                };
+            };
+        </script>
+    </head>
+
+    <body class="container-md">
+        <header class="mt-3 p-3 border border-dark border-3 rounded-top bg-success">
+            <div class="row">
+                <div class="col-7">
+                    <h1>Home</h1>
+                </div>
+                <div class="col-2">
+                    <nav class="nav vr">
+                        <a class="nav-link text-black" href=""><b>Home</b></a>
+                        <a class="nav-link text-black text-decoration-underline" aria-disabled="true"><b>Contact</b></a>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        
+        <main class="mt-3 border border-dark border-3 bg-success" style="min-height: 500px;">
+            <div class="p-3">
+                <h2>Lorem Ipsum</h2>
+            </div>
+
+            <div class="text-center">
+                <button class="rounded-5 w-75" id="toon">Klik hier om de inhoud van de pagina te zien! Of te verbergen...</button>
+                <noscript>Javascript noodzakelijk voor website</noscript>
+            </div>
+            
+            <div class="p-3">
+                <p class="verstoppen">
+                    <input id="like" class="rounded-5 m-3 float-end bg-primary" type="button" name="knop" value="Like knop!" onclick="like()" style="height: 150px; width: 150px;">
+                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                    Etiam justo nisi, luctus eget tempor vel, placerat ut ex. 
+                    Quisque posuere urna non ligula varius placerat. 
+                    Phasellus finibus convallis justo nec volutpat. 
+                    Donec aliquet magna ut libero cursus, in mollis risus facilisis. 
+                    Aenean auctor eget neque sed tincidunt. 
+                    Donec maximus sem luctus auctor volutpat. 
+                    Interdum et malesuada fames ac ante ipsum primis in faucibus.
+                    <br><br>
+                    Aliquam venenatis augue malesuada risus dapibus porta. 
+                    Aenean dignissim, tellus sed vestibulum efficitur, nibh nulla semper arcu, vitae semper est orci non lectus. 
+                    Curabitur varius ornare consectetur. 
+                    Duis ante turpis, venenatis at dolor vel, fermentum porta eros.
+                    <br><br>
+                </p>
+                <div class="text-center verstoppen">
+                    <input class="w-75 text-center rounded" type="text" id="naamInvoer" placeholder="Voer je naam in en druk op de like knop!" onkeypress="invoer()">
+                </div>
+            </div>
+        </main>
+
+        <footer class="my-3 p-3 border border-dark border-3 rounded-bottom bg-success">
+            <div class="text-end">
+                &copy; website 2023
+            </div>
+        </footer>
+
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" 
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" 
+        crossorigin="anonymous"></script>
+    </body>
+</html>
